@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exibeCLientes"> </div>
+    <script>
+     var clientes = [
+         {
+             nome: "Felipe",
+             idade: 23
+         },
+         {
+             nome: "Pedro",
+             idade: 45
+         },
+         {
+             nome: "Bino",
+             idade: 55,
+         },
+
+     ];
+
+     var exibeCLientes = document.getElementById("exibeCLientes");
+
+         function renderizaCliente(cliente){
+             //return "<div>" + cliente.nome + "</div>";
+            return `<div>${cliente.nome} / ${cliente.idade}</div>`; //formato de retorno do JS evoluido
+         } 
+
+        function renderizaClientes() {
+            var todososClientes = "";
+            
+
+            for(var i=0; i < clientes.length; i++){
+                todososClientes += renderizaCliente(clientes[i]);
+                
+            }
+
+            exibeCLientes.innerHTML = todososClientes;
+
+        }
+
+        renderizaClientes();
+    </script>
+</body>
+</html>
